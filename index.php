@@ -11,8 +11,8 @@ if ($_SESSION["nombre"] == null){
 <h1>Login</h1><p/>
 <form action="comprobar.php" method="post">
 <table>
-<tr><td>Usuario: </td><td><input type="text" name="usuario"/></td></tr>
-<tr><td>Contrase&ntilde;a: </td><td><input type="password" name="contraseña"/>
+<tr><td>Usuario: </td><td><input type="text" name="usuario" required/></td></tr>
+<tr><td>Contrase&ntilde;a: </td><td><input type="password" name="contraseña" required/>
 </table>
 <input type="submit"/>
 </form>
@@ -21,8 +21,5 @@ if ($_SESSION["nombre"] == null){
 <?php
 }
 else {
-echo "Bienvenido " . $_SESSION["nombre"];
-?>
-<a href="desconectar.php">Cerrar Sesion<a>
-<?php
+header("location:comprobar.php");
 };

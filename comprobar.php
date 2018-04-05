@@ -7,14 +7,19 @@ $query = "SELECT * FROM usuarios WHERE usuario='".$_POST['usuario']."' AND clave
 $sql = $db->query($query);
 $n = $sql->num_rows;
 if($n > 0){
-$_SESSION["nombre"] = "prueba";
+$_SESSION["nombre"] = $_POST['usuario'];
 header("location:comprobar.php");
 } else {
-echo "Usuario o contraseña incorrectos";
+echo "Usuario o contrase&ntilde;a incorrectos";
 }
 mysql_close($enlace);
 }
 else {
-echo "Has iniciado sesion <p/><a href='desconectar.php'>Cerrar Sesion</a>";
+echo "Usuario: " . $_SESSION["nombre"];
+?>
+<p/>Acceder a: <a href="administrador.php"> Administrador </a>
+<br/>Acceder a: <a href="usuario.php"> Usuario </a>
+<?php
+echo "<p/><a href='desconectar.php'>Cerrar Sesion</a>";
 };
 ?>

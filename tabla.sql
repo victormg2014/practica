@@ -6,3 +6,5 @@ CREATE TABLE usuarios.usuarios (
 );
 
 insert into usuarios.usuarios (usuario, clave) values ('pepe', 1234);
+insert into usuarios.usuarios (usuario, clave) values ('admin', 1234);
+
