@@ -1,0 +1,17 @@
+.caja {
+background-color: #33B2FF;
+padding: 10%;
+width: 300px;
+}
+
+td {
+font-size: large;
+font-weight: bolder;
+}
+
+.grande {
+font-size: large;
+font-weight: bolder;
+color: red;
+}
+

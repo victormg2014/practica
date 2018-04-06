@@ -3,9 +3,14 @@ session_start();
 if ($_SESSION['nombre'] == 'admin'){
 ?>
 <html>
+<head>
+<link rel="stylesheet" href="estilos.css">
+</head>
 <body>
+<div class="caja">
 <h1>Pagina administracion</h1><p/>
 <a href="comprobar.php">Volver</a>
+</div>
 </body>
 </html>
 <?php

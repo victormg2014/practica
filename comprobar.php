@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="estilos.css">
 <?php
 session_start();
+echo "<div class='caja'>";
 if ($_SESSION["nombre"] == null) {
 echo $_SESSION["nombre"];
 $db = new mysqli("localhost","root","","usuarios");
@@ -10,16 +12,18 @@ if($n > 0){
 $_SESSION["nombre"] = $_POST['usuario'];
 header("location:comprobar.php");
 } else {
-echo "Usuario o contrase&ntilde;a incorrectos";
+echo "<a class='grande'>Usuario o contrase&ntilde;a incorrectos</a>";
+echo "<p/><a href='index.php'>Volver a intentar</a>";
 }
 mysql_close($enlace);
 }
 else {
-echo "Usuario: " . $_SESSION["nombre"];
+echo "<table><tr><td>Usuario: </td><td>" . $_SESSION["nombre"] . "</td></tr>";
 ?>
-<p/>Acceder a: <a href="administrador.php"> Administrador </a>
-<br/>Acceder a: <a href="usuario.php"> Usuario </a>
+<tr><td></td><td><a href="administrador.php"> Administrador </a></td></tr>
+<tr><td></td><td><a href="usuario.php"> Usuario </a></td></tr>
 <?php
-echo "<p/><a href='desconectar.php'>Cerrar Sesion</a>";
+echo "<tr><td><a href='desconectar.php'>Cerrar Sesion</a></td><td></td></tr></table>";
 };
 ?>
+</div>
